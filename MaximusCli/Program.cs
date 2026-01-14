@@ -12,9 +12,11 @@ var services = new ServiceCollection();
 
 // Register parsers
 services.AddSingleton<IConfigParser, CursorConfigParser>();
+services.AddSingleton<IConfigParser, RooCodeConfigParser>();
 
 // Register writers
 services.AddSingleton<IConfigWriter, RooCodeConfigWriter>();
+services.AddSingleton<IConfigWriter, CursorConfigWriter>();
 
 // Register validator
 services.AddSingleton<IConfigValidator, McpConfigValidator>();
